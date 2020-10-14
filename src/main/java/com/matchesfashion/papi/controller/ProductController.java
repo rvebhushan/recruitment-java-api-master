@@ -16,12 +16,12 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    List<Product> getAllProducts() {
+    public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
 
     @GetMapping("/productsWithPrice")
-    List<Product> getProducts(@RequestParam(defaultValue = "100", required = false) Integer price) {
+    public List<Product> getProductsWithPrice(@RequestParam(defaultValue = "100", required = false) Integer price) {
         return productService.getProducts(price);
     }
 }
